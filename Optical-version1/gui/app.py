@@ -2,7 +2,7 @@ import customtkinter as ctk
 from modules.convex_lens import simulate_convex_lens
 
 # 在 self.button 裡加
-self.button = ctk.CTkButton(self, text="模擬凸透鏡", command=simulate_and_plot_lens)
+#self.button = ctk.CTkButton(self, text="模擬凸透鏡", command=simulate_and_plot_lens)
 
 # 初始化 GUI
 ctk.set_appearance_mode("light")
