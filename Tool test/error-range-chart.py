@@ -9,8 +9,8 @@ contact_angle = [150, 152, 155, 137, 136]
 contact_error = [1, 1, 1, 1, 1]
 
 # Sliding Angle - 實線（藍）
-sliding_angle_solid = [145, 142, 140, 138, 139]
-sliding_error_solid = [2, 2, 2, 1.5, 2]
+#sliding_angle_solid = [145, 142, 140, 138, 139]
+#sliding_error_solid = [2, 2, 2, 1.5, 2]
 
 # Sliding Angle - 虛線（藍）
 sliding_angle_dashed = [5, 4, 2, 1, 3]
@@ -27,17 +27,17 @@ ax1.errorbar(x, contact_angle, yerr=contact_error, fmt='--o', color=color1,
 ax1.tick_params(axis='y', labelcolor=color1)
 ax1.set_ylim(135, 160)
 
-# Sliding Angle - 實線 + 虛線（藍色）
+# Sliding Angle - 實線（藍色）
 ax2 = ax1.twinx()
 color2 = 'blue'
 ax2.set_ylabel('Sliding Angle (°)', color=color2)
 
 # 實線部分
-ax2.errorbar(x, sliding_angle_solid, yerr=sliding_error_solid, fmt='-o', color=color2,
-             label='Sliding Angle (swelling)', capsize=5, elinewidth=1.5, markeredgewidth=1.5)
+#ax2.errorbar(x, sliding_angle_solid, yerr=sliding_error_solid, fmt='-o', color=color2,
+            # label='Sliding Angle (swelling)', capsize=5, elinewidth=1.5, markeredgewidth=1.5)
 
 # 虛線部分
-ax2.errorbar(x, sliding_angle_dashed, yerr=sliding_error_dashed, fmt='--o', color=color2,
+ax2.errorbar(x, sliding_angle_dashed, yerr=sliding_error_dashed, fmt='-o', color=color2,
              label='Sliding Angle (non-swelling)', capsize=5, elinewidth=1.5, markeredgewidth=1.5)
 
 ax2.tick_params(axis='y', labelcolor=color2)
