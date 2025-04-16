@@ -1,6 +1,7 @@
 import sympy as sp
 
-def verify_wave_equation(psi, x, t, v):
+def verify_wave_equation(psi, x, t, v, a, b):
+    
     """
     驗證給定的 ψ(x, t) 是否符合一維波動方程
     :param psi: 需要驗證的波函數 ψ(x, t)
@@ -19,37 +20,33 @@ def verify_wave_equation(psi, x, t, v):
 
     # 簡化差異項
     difference = sp.simplify(lhs - rhs)
-
-    # 輸出結果
-    #print("∂²ψ/∂x² =")
-    #sp.pretty_print(sp.simplify(lhs))
-    
-    #print("\n(1/v²) * ∂²ψ/∂t² =")
-    #sp.pretty_print(sp.simplify(rhs))
     
     print("\n左邊 - 右邊 的結果（應該為 0）:")
     print(sp.latex(sp.simplify(difference)))
 
+    print('\n','D_to_x\n',sp.latex(sp.simplify(d2psi_dx2)))
+    print('\n','D_to_t\n',sp.latex(sp.simplify(d2psi_dt2)))
     if difference == 0:
         print("\n✅ ψ(x, t) 滿足一維波動方程")
     else:
         print("\n❌ ψ(x, t) 不符合波動方程")
 
-# 範例：檢查ψ(x, t) = 3 / (10(x - vt)^2 + 1)
-x, t, v = sp.symbols('x t v')
+
+x, t, v, a, b = sp.symbols('x t v a b', real=True, positive=True)
+
+'''
+psi = sp.exp(-4*a*x**2 - b*t**2 + 4*sp.sqrt(a*b)*x*t)
+verify_wave_equation(psi, x, t, v, a, b)
+'''
 
 ''' 3 / (10 * (x - v*t)**2 + 1)
 psi = 3 / (10 * (x - v*t)**2 + 1)
-
-# 驗證
 verify_wave_equation(psi, x, t, v)
 '''
 
 ''' x * t
 # 更改為不同的波函數
 psi_new = x *t
-
-# 驗證這個波函數是否符合波動方程
 verify_wave_equation(psi_new, x, t, v)
 '''
 

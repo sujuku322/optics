@@ -6,11 +6,9 @@ v = 1  # 波速
 x = np.linspace(-10, 10, 400)  # x 範圍
 
 # 計算 ψ(x, t) 對不同 t
-def psi(x, t, v=1):
-    return 3 / (10 * ( x- v * t)**2 + 1)
-    #return x *t
-    #return x**2 + np.sin(x)
-    #return np.exp(x * t)
+def psi(x, t, a=0.05, b=1, v=1 ):
+    return np.exp(-4*a*x**2 - b*t**2 + 4*np.sqrt(a*b)*x*t)
+
 # 時間點列表
 times = [0, 1, 2, 3]
 
