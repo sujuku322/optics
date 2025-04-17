@@ -2,7 +2,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-def plot_wave_function(psi, x, times=[0, 1, 2, 3]):
+def plot_wave_function(psi, x ):
     """
     繪製波形函數 psi(x, t)
 
@@ -12,8 +12,9 @@ def plot_wave_function(psi, x, times=[0, 1, 2, 3]):
     - x: 要畫圖的 x 範圍
     - times: 要畫的時間點列表
     """
-    x = np.linspace(-10, 10, 400)
-
+    
+    x = np.linspace(-50, 50, 400)
+    times=[0, 1, 2, 3]
     plt.figure(figsize=(10, 6))
     for t in times:
         plt.plot(x, psi(x, t), label=f't = {t}')
