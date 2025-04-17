@@ -13,7 +13,7 @@ def plot_wave_function(psi, x ):
     - times: 要畫的時間點列表
     """
     
-    x = np.linspace(-50, 50, 400)
+    x = np.linspace(-10, 10, 400)
     times=[0, 1, 2, 3]
     plt.figure(figsize=(10, 6))
     for t in times:

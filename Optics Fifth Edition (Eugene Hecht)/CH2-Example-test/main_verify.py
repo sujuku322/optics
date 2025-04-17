@@ -1,6 +1,6 @@
 import sympy as sp
 
-def verify_wave_equation(psi, x, t, v):
+def verify_wave_equation(psi, x, t):
     
     """
     驗證給定的 ψ(x, t) 是否符合一維波動方程
